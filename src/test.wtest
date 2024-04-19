@@ -1,0 +1,20 @@
+import empleados.*
+
+test "Galvan esta pobre gasta 50.000 y no tiene plata" {
+	galvan.gastar(50000)
+	assert.that(galvan.estoyPobre())
+
+}
+
+test "Galvan esta pobre gasta 50.000 y total de dinero es 0" {
+	galvan.gastar(50000)
+	assert.equals(0, galvan.totalDinero())
+
+}
+
+test "Galvan esta pobre gasta 10.000 y cobra el sueldo" {
+	galvan.gastar(10000)
+	galvan.cobrarSueldo()
+	assert.equals(140000, galvan.totalDinero())
+
+}
